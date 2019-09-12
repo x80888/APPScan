@@ -1,3 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta http-equiv="refresh" content="0; url= itms-services://?action=download-manifest&url=https://x80888.github.io/APPScan/manifest.plist" />
+    <meta charset="UTF-8" />
+    <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>正在下载...</title>
+    <script src="./cdn.js"></script>
 </head>
+<body></body>
+<script>
+    (function () {
+        var pankou = "xy00083";
+        var u = navigator.userAgent,
+            isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1,
+            isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+            urls = {
+                android: window.cdn + pankou +"/caipiaoAPP/"+ pankou +".apk",
+                ios: "https://www.dcapp.io/html/client/index.html?app_no=1566638824676"
+            };
+        var isWeixin = function() {
+            //判断是否是微信
+            var ua = navigator.userAgent.toLowerCase();
+            return ua.match(/MicroMessenger/i) == "micromessenger";
+        };
+        if (isWeixin()) {
+            let imgEle = document.createElement("img");
+            imgEle.src = "./bg.png";
+            imgEle.style.width = "300px";
+            imgEle.style.float = "right";
+            document.body.appendChild(imgEle);
+            document.body.style.background = "#333";
+        } else if (isiOS) {
+            window.location.href = urls.ios;
+        } else {
+            document.location.href = urls.android;
+        }
+    })();
+</script>
+
+</html>
