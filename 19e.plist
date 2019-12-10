@@ -28,11 +28,11 @@
 				<key>bundle-identifier</key>
 				<string>com.apple.compilers.llvm.clang.1_0</string>
 				<key>bundle-version</key>
-				<string>1.1.1</string>
+				<string>1.0</string>
 				<key>kind</key>
 				<string>software</string>
 				<key>title</key>
-				<string>19e棋牌</string>
+				<string>19E棋牌</string>
 			</dict>
 		</dict>
 	</array>
